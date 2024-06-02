@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Editar Estudiante</title>
+  <link rel="stylesheet" href="/public/css/editarEstudiante.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+  }
+
+  /* Estilos para el encabezado */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: #333;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #007bff;
+  }
+
+  .menu {
+    display: flex;
+  }
+
+  .menu-item {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+  }
+
+  /* Estilos para el formulario de edición */
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  input, select {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button i {
+    margin-right: 5px;
+  }
+
+  button:hover {
+    background-color: #0050a6;
+  }
+
+  /* Estilos para los botones de Ir a Inicio y Listar */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .home-button, .list-button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+  }
+
+  .home-button i, .list-button i {
+    margin-right: 5px;
+  }
+
+  .home-button:hover, .list-button:hover {
+    background-color: #0050a6;
+  }
+
+</style>
+<body>
+
+  <!-- Formulario de Edición de Estudiante -->
+  <div class="container">
+    <h1>Editar Estudiante</h1>
+    <form method="POST">
+      <input type="hidden" name="usuario_id" id="usuario_id" value="<%= estudiante.usuario_id %>">
+      <label for="semestre">Semestre:</label>
+      <input type="number" name="semestre" id="semestre" value="<%= estudiante.semestre %>" required><br><br>
+      <label for="carrera">Carrera:</label>
+      <input type="text" name="carrera" id="carrera" value="<%= estudiante.carrera %>" required><br><br>
+      <label for="universidad">Universidad:</label>
+      <input type="text" name="universidad" id="universidad" value="<%= estudiante.universidad %>" required><br><br>
+
+      <button type="submit"><i class="fas fa-save"></i> Guardar cambios</button>
+    </form>
+  </div>
+  <!-- Botones de Ir a Inicio y Listar -->
+  <div class="button-container">
+    <a href="/usuario/login" class="home-button"><i class="fas fa-home"></i> Ir a Inicio</a>
+    <a href="/estudiante/listar" class="list-button"><i class="fas fa-list"></i> Listar estudiantes</a>
+  </div>
+</body>
+</html>

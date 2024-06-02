@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Estudiante</title>
+  <link rel="stylesheet" href="/public/css/agregarEstudiante.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+    
+    /* Estilos para el encabezado */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      color: #333;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #007bff;
+    }
+    
+    .menu {
+      display: flex;
+    }
+    
+    .menu-item {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+    
+    .menu-item:hover {
+      color: #007bff;
+    }
+    
+    /* Estilos para el formulario de agregar estudiantes */
+    .add-form {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    
+    .add-form-title {
+      margin-bottom: 20px;
+      font-size: 24px;
+      text-align: center;
+      color: #333;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="number"],
+    input[type="date"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+    
+    /* Estilos para los botones de Ir a Inicio y Listar estudiantes */
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .home-button,
+    .list-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+    
+    .home-button:hover,
+    .list-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <a href="/" class="logo">CRUD</a>
+    <nav class="menu">
+      <a href="/" class="menu-item"><i class="fas fa-home"></i> Inicio</a>
+      <a href="/views/estudiante/listar.ejs" class="menu-item"><i class="fas fa-user-graduate"></i> Listar Estudiantes</a>
+      <a href="/views/usuario/logout" class="menu-item"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+    </nav>
+  </header>
+
+  <!-- Formulario de Agregar Estudiante -->
+  <div class="add-form">
+    <h1 class="add-form-title">Agregar Estudiante</h1>
+    <form method="POST">
+      <label for="usuario_id"><i class="fas fa-id-card"></i> ID del Usuario:</label>
+      <input type="number" name="usuario_id" id="usuario_id" required>
+      
+      <label for="semestre"><i class="fas fa-calendar"></i> Semestre:</label>
+      <input type="text" name="semestre" id="semestre" required>
+      
+      <label for="Carrera"><i class="fas fa-book"></i> Carrera:</label>
+      <input type="text" name="Carrera" id="Carrera" required>
+      
+      <label for="Universidad"><i class="fas fa-university"></i> Universidad:</label>
+      <input type="text" name="Universidad" id="Universidad" required>
+      
+      <input type="submit" value="Agregar">
+    </form>
+  </div>
+
+  <!-- Botones de Ir a Inicio y Listar Estudiantes -->
+  <div class="button-container">
+    <a href="/usuario/login" class="home-button"><i class="fas fa-home"></i> Ir a Inicio</a>
+    <a href="/estudiante/listar" class="list-button"><i class="fas fa-user-graduate"></i> Listar Estudiantes</a>
+  </div>
+</body>
+</html>

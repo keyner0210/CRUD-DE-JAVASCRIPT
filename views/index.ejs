@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión como Usuario</title>
+  <link rel="stylesheet" href="/public/css/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<style>
+ /* Estilos generales */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #e9ecef;
+  margin: 0;
+  padding: 0;
+  color: #495057;
+}
+
+/* Encabezado */
+header {
+  background: linear-gradient(45deg, #343a40, #495057);
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+}
+
+header nav {
+  margin-top: 10px;
+  text-align: center;
+}
+
+header nav a {
+  color: #ced4da;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #adb5bd;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Título del formulario */
+.form-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #343a40;
+  text-align: center;
+}
+
+/* Estilos del formulario */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #495057;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #495057;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #495057;
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.register-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: #343a40;
+  padding: 20px 0;
+  color: #fff;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+</style>
+<body>
+  <!-- Contenido principal -->
+  <main class="form-container" role="main">
+    <h1 class="form-title">Iniciar sesión como Usuario</h1>
+    <form action="/usuario/login" method="POST" aria-labelledby="form-title">
+      <div class="form-group">
+        <label for="email"><i class="fas fa-envelope" aria-hidden="true"></i> Correo electrónico:</label>
+        <input type="email" id="email" name="email" required aria-required="true" aria-describedby="emailHelp">
+      </div>
+      <div class="form-group">
+        <label for="clave"><i class="fas fa-lock" aria-hidden="true"></i> Clave:</label>
+        <input type="password" id="clave" name="clave" required aria-required="true" aria-describedby="claveHelp">
+      </div>
+      <button type="submit" class="btn"><i class="fas fa-sign-in-alt" aria-hidden="true"></i> Iniciar sesión</button>
+    </form>
+    <div class="register-link">
+      ¿No tienes una cuenta? <a href="/usuario/registrar">Regístrate</a>
+    </div>
+  </main>
+</body>
+</html>
+
+

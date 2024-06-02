@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Listado de Estudiantes</title>
+  <link rel="stylesheet" href="/public/css/listarEcss">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+  }
+  
+  /* Estilos para el encabezado */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: #333;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .menu {
+    display: flex;
+  }
+  
+  .menu-item {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Estilos para la tabla de contratos */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  th {
+    background-color: #f5f5f5;
+  }
+  
+  .acciones {
+    text-align: center;
+  }
+  
+  .acciones a {
+    margin-right: 10px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .acciones a:hover {
+    color: #555;
+  }
+  
+  .botones {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .boton {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .boton i {
+    margin-right: 5px;
+  }
+  
+  .boton:hover {
+    background-color: #053e7a;
+  }
+  
+</style>
+<body>
+  <!-- Listado de Estudiantes -->
+  <div class="container">
+    <h1>Listado de Estudiantes</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>usuario_id</th>
+          <th>semestre</th>
+          <th>carrera </th>
+          <th>universidad</th>
+         
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (estudiantes.length === 0) { %>
+          <tr>
+            <td colspan="14">No se encontraron Estudiantes.</td>
+          </tr>
+        <% } else { %>
+           <% estudiantes.forEach((estudiante) => { %>
+            <tr>
+              <td><%= estudiante.id %></td>
+              <td><%= estudiante.usuario_id %></td>
+              <td><%= estudiante.semestre %></td>
+              <td><%= estudiante.carrera %></td>
+              <td><%= estudiante.universidad %></td>
+           
+              <td class="acciones">
+                <a href="/estudiante/editar/<%= estudiante.id %>"><i class="fas fa-edit"></i> Editar</a>
+                <a href="/estudiante/eliminar/<%= estudiante.id %>"><i class="fas fa-trash-alt"></i> Eliminar</a>
+              </td>
+            </tr>
+           <% }); %>
+        <% } %>
+      </tbody>
+    </table>
+  
+    <!-- Botones -->
+    <div class="botones">
+      <a href="/usuario/login" class="boton"><i class="fas fa-home"></i> Ir a Inicio</a>
+      <a href="/estudiante/agregar" class="boton"><i class="fas fa-plus"></i> Agregar Estudiante</a>
+    </div>
+  </div>
+</body>
+</html>

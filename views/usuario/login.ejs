@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD Express</title>
+    <link rel="stylesheet" href="/public/css/index.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
+    integrity="sha512-..." crossorigin="anonymous" />
+</head>
+<style>
+    /* Estilos generales */
+body {
+  font-family: "Montserrat", Arial, sans-serif;
+  text-align: center;
+  background-color: #f5f5f5; /* Cambio de color de fondo */
+  margin: 30;
+  padding: 30;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #ff5252; /* Cambio de color de título */
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #333; /* Cambio de color de subtítulo */
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+p {
+  color: #666; /* Cambio de color de texto normal */
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Estilos para los botones */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #009688; /* Cambio de color de fondo del botón */
+  color: #fff; /* Cambio de color de texto del botón */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #00796b; /* Cambio de color al pasar el mouse */
+}
+
+/* Estilos para la galería de imágenes */
+.image-collage {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.image-collage img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-collage img:hover {
+  transform: scale(1.05);
+}
+
+
+
+</style>
+<body>
+    <div class="container">
+        <h1 class="text-center">CRUD DE JAVASCRIPT</h1>
+    </div>
+  
+
+    
+        <div class="card">
+            <a href="/usuario" class="btn"><i class="fas fa-users"></i> Listar Usuarios</a>
+        </div>
+        <div class="card">
+            <a href="/estudiante/agregar" class="btn"><i class="fas fa-plus"></i> Agregar Estudiantes</a>
+        </div>
+        <div class="card">
+            <a href="/estudiante/listar" class="btn"><i class="fas fa-list"></i> Listar Estudiantes</a>
+        </div>
+        <div class="card">
+            <a href="/" class="btn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+        
+    </div>
+</body>
+</html>
